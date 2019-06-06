@@ -1,6 +1,8 @@
 class Review < ApplicationRecord
   # Direct associations
 
+  has_one    :compensations_by_platform
+
   has_many   :likes,
              :class_name => "Vote"
 
