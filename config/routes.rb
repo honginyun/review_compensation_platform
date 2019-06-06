@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/vote_comments/new", { :controller => "vote_comments", :action => "new_form" })
   post("/create_vote_comment", { :controller => "vote_comments", :action => "create_row" })
+  post("/create_vote_comment_from_comment", { :controller => "vote_comments", :action => "create_row_from_comment" })
 
   # READ
   get("/vote_comments", { :controller => "vote_comments", :action => "index" })
@@ -47,6 +48,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/votes/new", { :controller => "votes", :action => "new_form" })
   post("/create_vote", { :controller => "votes", :action => "create_row" })
+  post("/create_vote_from_review", { :controller => "votes", :action => "create_row_from_review" })
 
   # READ
   get("/votes", { :controller => "votes", :action => "index" })
@@ -68,6 +70,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/comments/new", { :controller => "comments", :action => "new_form" })
   post("/create_comment", { :controller => "comments", :action => "create_row" })
+  post("/create_comment_from_review", { :controller => "comments", :action => "create_row_from_review" })
 
   # READ
   get("/comments", { :controller => "comments", :action => "index" })
@@ -89,6 +92,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/tips_reviews/new", { :controller => "tips_reviews", :action => "new_form" })
   post("/create_tips_review", { :controller => "tips_reviews", :action => "create_row" })
+  post("/create_tips_review_from_review", { :controller => "tips_reviews", :action => "create_row_from_review" })
 
   # READ
   get("/tips_reviews", { :controller => "tips_reviews", :action => "index" })
@@ -138,6 +142,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/reviews/new", { :controller => "reviews", :action => "new_form" })
   post("/create_review", { :controller => "reviews", :action => "create_row" })
+  post("/create_review_from_product", { :controller => "reviews", :action => "create_row_from_product" })
 
   # READ
   get("/reviews", { :controller => "reviews", :action => "index" })

@@ -32,6 +32,21 @@ class VoteCommentsController < ApplicationController
     end
   end
 
+  def create_row_from_comment
+    @vote_comment = VoteComment.new
+
+    @vote_comment.voter_id = params.fetch("voter_id")
+    @vote_comment.comment_id = params.fetch("comment_id")
+
+    if @vote_comment.valid?
+      @vote_comment.save
+
+      redirect_to("/comments/#{@vote_comment.comment_id}", notice: "VoteComment created successfully.")
+    else
+      render("vote_comment_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @vote_comment = VoteComment.find(params.fetch("prefill_with_id"))
 

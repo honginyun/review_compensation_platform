@@ -1,0 +1,25 @@
+<!-- Form vote_comment start -->
+<form action="/create_vote_comment_from_comment" method="post">
+<!-- Form vote_comment end -->
+
+  <!-- Label and input for voter_id start -->
+  <div class="form-group">
+    <label for="voter_id">
+      Voter
+    </label>
+
+    <!-- Input for voter_id start -->
+    <input type="text" id="voter_id" name="voter_id" class="form-control" value="<%= @vote_comment.voter_id %>">
+    <!-- Input for voter_id end -->
+  </div>
+  <!-- Label and input for voter_id end -->
+
+  <!-- Label and input for comment_id start -->
+  <!-- Input for comment_id start -->
+  <input type="hidden" name="comment_id" value="<%= @comment.id %>">
+  <!-- Input for comment_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create vote comment
+  </button>
+</form>

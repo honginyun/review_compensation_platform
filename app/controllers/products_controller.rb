@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @review = Review.new
     @product = Product.find(params.fetch("id_to_display"))
 
     render("product_templates/show.html.erb")

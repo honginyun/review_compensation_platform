@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
   end
 
   def show
+    @vote_comment = VoteComment.new
     @comment = Comment.find(params.fetch("id_to_display"))
 
     render("comment_templates/show.html.erb")
@@ -29,6 +30,23 @@ class CommentsController < ApplicationController
       @comment.save
 
       redirect_back(:fallback_location => "/comments", :notice => "Comment created successfully.")
+    else
+      render("comment_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_review
+    @comment = Comment.new
+
+    @comment.review_id = params.fetch("review_id")
+    @comment.commenter_id = params.fetch("commenter_id")
+    @comment.comment = params.fetch("comment")
+    @comment.comment_vote = params.fetch("comment_vote")
+
+    if @comment.valid?
+      @comment.save
+
+      redirect_to("/reviews/#{@comment.review_id}", notice: "Comment created successfully.")
     else
       render("comment_templates/new_form_with_errors.html.erb")
     end

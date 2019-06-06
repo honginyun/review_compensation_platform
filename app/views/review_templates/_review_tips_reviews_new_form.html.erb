@@ -1,0 +1,37 @@
+<!-- Form tips_review start -->
+<form action="/create_tips_review_from_review" method="post">
+<!-- Form tips_review end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @tips_review.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for review_id start -->
+  <!-- Input for review_id start -->
+  <input type="hidden" name="review_id" value="<%= @review.id %>">
+  <!-- Input for review_id end -->
+
+  <!-- Label and input for amount start -->
+  <div class="form-group">
+    <label for="amount">
+      Amount
+    </label>
+
+    <!-- Input for amount start -->
+    <input type="text" id="amount" name="amount" class="form-control" value="<%= @tips_review.amount %>">
+    <!-- Input for amount end -->
+  </div>
+  <!-- Label and input for amount end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create tips review
+  </button>
+</form>

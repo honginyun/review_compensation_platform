@@ -33,6 +33,22 @@ class TipsReviewsController < ApplicationController
     end
   end
 
+  def create_row_from_review
+    @tips_review = TipsReview.new
+
+    @tips_review.user_id = params.fetch("user_id")
+    @tips_review.review_id = params.fetch("review_id")
+    @tips_review.amount = params.fetch("amount")
+
+    if @tips_review.valid?
+      @tips_review.save
+
+      redirect_to("/reviews/#{@tips_review.review_id}", notice: "TipsReview created successfully.")
+    else
+      render("tips_review_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @tips_review = TipsReview.find(params.fetch("prefill_with_id"))
 

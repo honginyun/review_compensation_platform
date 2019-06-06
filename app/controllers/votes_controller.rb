@@ -34,6 +34,23 @@ class VotesController < ApplicationController
     end
   end
 
+  def create_row_from_review
+    @vote = Vote.new
+
+    @vote.user_id = params.fetch("user_id")
+    @vote.review_id = params.fetch("review_id")
+    @vote.upvote = params.fetch("upvote")
+    @vote.downvote = params.fetch("downvote")
+
+    if @vote.valid?
+      @vote.save
+
+      redirect_to("/reviews/#{@vote.review_id}", notice: "Vote created successfully.")
+    else
+      render("vote_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @vote = Vote.find(params.fetch("prefill_with_id"))
 
