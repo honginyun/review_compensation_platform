@@ -1,0 +1,68 @@
+<h1>
+  Edit vote #<%= @vote.id %>
+</h1>
+
+<hr>
+
+<!-- Form vote start -->
+<form action="/update_vote/<%= @vote.id %>" method="post">
+<!-- Form vote end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @vote.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for review_id start -->
+  <div class="form-group">
+    <label for="review_id">
+      Review
+    </label>
+
+    <!-- Input for review_id start -->
+    <input type="text" id="review_id" name="review_id" class="form-control" value="<%= @vote.review_id %>">
+    <!-- Input for review_id end -->
+  </div>
+  <!-- Label and input for review_id end -->
+
+  <!-- Label and input for upvote start -->
+  <div class="form-group">
+    <label for="upvote">
+      Upvote
+    </label>
+
+    <!-- Input for upvote start -->
+    <input type="text" id="upvote" name="upvote" class="form-control" value="<%= @vote.upvote %>">
+    <!-- Input for upvote end -->
+  </div>
+  <!-- Label and input for upvote end -->
+
+  <!-- Label and input for downvote start -->
+  <div class="form-group">
+    <label for="downvote">
+      Downvote
+    </label>
+
+    <!-- Input for downvote start -->
+    <input type="text" id="downvote" name="downvote" class="form-control" value="<%= @vote.downvote %>">
+    <!-- Input for downvote end -->
+  </div>
+  <!-- Label and input for downvote end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update vote
+  </button>
+</form>
+
+<hr>
+
+<a href="/votes">
+  Go back
+</a>
