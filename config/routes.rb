@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_vote_comment/:id_to_remove", { :controller => "vote_comments", :action => "destroy_row" })
+  get("/delete_vote_comment_from_comment/:id_to_remove", { :controller => "vote_comments", :action => "destroy_row_from_comment" })
+  get("/delete_vote_comment_from_voter/:id_to_remove", { :controller => "vote_comments", :action => "destroy_row_from_voter" })
 
   #------------------------------
 
@@ -56,6 +58,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_vote/:id_to_remove", { :controller => "votes", :action => "destroy_row" })
+  get("/delete_vote_from_user/:id_to_remove", { :controller => "votes", :action => "destroy_row_from_user" })
+  get("/delete_vote_from_review/:id_to_remove", { :controller => "votes", :action => "destroy_row_from_review" })
 
   #------------------------------
 
@@ -75,6 +79,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_comment/:id_to_remove", { :controller => "comments", :action => "destroy_row" })
+  get("/delete_comment_from_commenter/:id_to_remove", { :controller => "comments", :action => "destroy_row_from_commenter" })
+  get("/delete_comment_from_review/:id_to_remove", { :controller => "comments", :action => "destroy_row_from_review" })
 
   #------------------------------
 
@@ -94,6 +100,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_tips_review/:id_to_remove", { :controller => "tips_reviews", :action => "destroy_row" })
+  get("/delete_tips_review_from_user/:id_to_remove", { :controller => "tips_reviews", :action => "destroy_row_from_user" })
+  get("/delete_tips_review_from_review/:id_to_remove", { :controller => "tips_reviews", :action => "destroy_row_from_review" })
 
   #------------------------------
 
@@ -141,6 +149,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_review/:id_to_remove", { :controller => "reviews", :action => "destroy_row" })
+  get("/delete_review_from_product/:id_to_remove", { :controller => "reviews", :action => "destroy_row_from_product" })
+  get("/delete_review_from_reviewer/:id_to_remove", { :controller => "reviews", :action => "destroy_row_from_reviewer" })
 
   #------------------------------
 

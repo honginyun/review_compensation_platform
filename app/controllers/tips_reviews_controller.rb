@@ -55,6 +55,22 @@ class TipsReviewsController < ApplicationController
     end
   end
 
+  def destroy_row_from_review
+    @tips_review = TipsReview.find(params.fetch("id_to_remove"))
+
+    @tips_review.destroy
+
+    redirect_to("/reviews/#{@tips_review.review_id}", notice: "TipsReview deleted successfully.")
+  end
+
+  def destroy_row_from_user
+    @tips_review = TipsReview.find(params.fetch("id_to_remove"))
+
+    @tips_review.destroy
+
+    redirect_to("/users/#{@tips_review.user_id}", notice: "TipsReview deleted successfully.")
+  end
+
   def destroy_row
     @tips_review = TipsReview.find(params.fetch("id_to_remove"))
 

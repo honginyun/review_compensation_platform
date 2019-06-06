@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Tips Reviews
+
+    <a data-toggle="collapse" href="#user_tips_reviews_new_form">
+      Add tips review
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.tips_reviews.each do |tips_review| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/tips_reviews/<%= tips_review.id %>">
+          <%= tips_review.user_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

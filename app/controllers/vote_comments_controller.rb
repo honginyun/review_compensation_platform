@@ -53,6 +53,22 @@ class VoteCommentsController < ApplicationController
     end
   end
 
+  def destroy_row_from_voter
+    @vote_comment = VoteComment.find(params.fetch("id_to_remove"))
+
+    @vote_comment.destroy
+
+    redirect_to("/users/#{@vote_comment.voter_id}", notice: "VoteComment deleted successfully.")
+  end
+
+  def destroy_row_from_comment
+    @vote_comment = VoteComment.find(params.fetch("id_to_remove"))
+
+    @vote_comment.destroy
+
+    redirect_to("/comments/#{@vote_comment.comment_id}", notice: "VoteComment deleted successfully.")
+  end
+
   def destroy_row
     @vote_comment = VoteComment.find(params.fetch("id_to_remove"))
 
