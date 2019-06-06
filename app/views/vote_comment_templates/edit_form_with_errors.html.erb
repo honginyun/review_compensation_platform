@@ -1,0 +1,53 @@
+<!-- Validation failure messages -->
+<% if @vote_comment.errors.any? %>
+  <% @vote_comment.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit vote comment #<%= @vote_comment.id %>
+</h1>
+
+<hr>
+
+<!-- Form vote_comment start -->
+<form action="/update_vote_comment/<%= @vote_comment.id %>" method="post">
+<!-- Form vote_comment end -->
+
+  <!-- Label and input for voter_id start -->
+  <div class="form-group">
+    <label for="voter_id">
+      Voter
+    </label>
+
+    <!-- Input for voter_id start -->
+    <input type="text" id="voter_id" name="voter_id" class="form-control" value="<%= @vote_comment.voter_id %>">
+    <!-- Input for voter_id end -->
+  </div>
+  <!-- Label and input for voter_id end -->
+
+  <!-- Label and input for comment_id start -->
+  <div class="form-group">
+    <label for="comment_id">
+      Comment
+    </label>
+
+    <!-- Input for comment_id start -->
+    <input type="text" id="comment_id" name="comment_id" class="form-control" value="<%= @vote_comment.comment_id %>">
+    <!-- Input for comment_id end -->
+  </div>
+  <!-- Label and input for comment_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update vote comment
+  </button>
+</form>
+
+<hr>
+
+<a href="/vote_comments">
+  Go back
+</a>

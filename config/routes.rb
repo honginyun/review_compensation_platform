@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Vote comment resource:
+
+  # CREATE
+  get("/vote_comments/new", { :controller => "vote_comments", :action => "new_form" })
+  post("/create_vote_comment", { :controller => "vote_comments", :action => "create_row" })
+
+  # READ
+  get("/vote_comments", { :controller => "vote_comments", :action => "index" })
+  get("/vote_comments/:id_to_display", { :controller => "vote_comments", :action => "show" })
+
+  # UPDATE
+  get("/vote_comments/:prefill_with_id/edit", { :controller => "vote_comments", :action => "edit_form" })
+  post("/update_vote_comment/:id_to_modify", { :controller => "vote_comments", :action => "update_row" })
+
+  # DELETE
+  get("/delete_vote_comment/:id_to_remove", { :controller => "vote_comments", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Product resource:
 
   # CREATE

@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Vote comment #<%= @vote_comment.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/vote_comments" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link vote_comment start -->
+      <div class="col">
+        <a href="/vote_comments/<%= @vote_comment.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit vote comment
+        </a>
+      </div>
+      <!-- Edit link vote_comment end -->
+
+      <!-- Delete link vote_comment start -->
+      <div class="col">
+        <a href="/delete_vote_comment/<%= @vote_comment.id %>" class="btn btn-block btn-outline-secondary">
+          Delete vote comment
+        </a>
+      </div>
+      <!-- Delete link vote_comment end -->
+    </div>
+
+    <dl>
+      <dt>
+        Voter
+      </dt>
+      <!-- Display voter_id start -->
+      <dd>
+        <%= @vote_comment.voter_id %>
+      </dd>
+      <!-- Display voter_id end -->
+
+      <dt>
+        Comment
+      </dt>
+      <!-- Display comment_id start -->
+      <dd>
+        <%= @vote_comment.comment_id %>
+      </dd>
+      <!-- Display comment_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@vote_comment.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@vote_comment.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
