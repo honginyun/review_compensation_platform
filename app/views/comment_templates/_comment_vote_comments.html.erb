@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_vote_comment_from_comment/<%= vote_comment.id %>">
-          Delete
-        </a>
+        <%if current_user == vote_comment.voter %>
+          <a href="/delete_vote_comment_from_comment/<%= vote_comment.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>
