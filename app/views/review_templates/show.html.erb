@@ -1,0 +1,100 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Review #<%= @review.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/reviews" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link review start -->
+      <div class="col">
+        <a href="/reviews/<%= @review.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit review
+        </a>
+      </div>
+      <!-- Edit link review end -->
+
+      <!-- Delete link review start -->
+      <div class="col">
+        <a href="/delete_review/<%= @review.id %>" class="btn btn-block btn-outline-secondary">
+          Delete review
+        </a>
+      </div>
+      <!-- Delete link review end -->
+    </div>
+
+    <dl>
+      <dt>
+        Compensation
+      </dt>
+      <!-- Display compensation_id start -->
+      <dd>
+        <%= @review.compensation_id %>
+      </dd>
+      <!-- Display compensation_id end -->
+
+      <dt>
+        Review content
+      </dt>
+      <!-- Display review_content start -->
+      <dd>
+        <%= @review.review_content %>
+      </dd>
+      <!-- Display review_content end -->
+
+      <dt>
+        Product
+      </dt>
+      <!-- Display product_id start -->
+      <dd>
+        <%= @review.product_id %>
+      </dd>
+      <!-- Display product_id end -->
+
+      <dt>
+        Ratings
+      </dt>
+      <!-- Display ratings start -->
+      <dd>
+        <%= @review.ratings %>
+      </dd>
+      <!-- Display ratings end -->
+
+      <dt>
+        Reviewer
+      </dt>
+      <!-- Display reviewer_id start -->
+      <dd>
+        <%= @review.reviewer_id %>
+      </dd>
+      <!-- Display reviewer_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@review.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@review.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
