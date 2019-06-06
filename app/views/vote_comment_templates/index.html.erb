@@ -58,13 +58,21 @@
 
         <!-- Display vote_comment.voter_id start -->
         <td>
-          <%= vote_comment.voter.created_at %>
+          <% if vote_comment.voter.present? %>
+            <a href="/users/<%= vote_comment.voter.id %>">
+              <%= vote_comment.voter.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display vote_comment.voter_id end -->
 
         <!-- Display vote_comment.comment_id start -->
         <td>
-          <%= vote_comment.comment.review_id %>
+          <% if vote_comment.comment.present? %>
+            <a href="/comments/<%= vote_comment.comment.id %>">
+              <%= vote_comment.comment.review_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display vote_comment.comment_id end -->
 

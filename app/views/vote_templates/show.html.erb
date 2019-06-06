@@ -34,7 +34,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @vote.user_id %>
+        <% if @vote.user.present? %>
+          <a href="/users/<%= @vote.user_id %>">
+            <%= @vote.user.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display review_id start -->
       <dd>
-        <%= @vote.review_id %>
+        <% if @vote.review.present? %>
+          <a href="/reviews/<%= @vote.review_id %>">
+            <%= @vote.review.compensation_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display review_id end -->
 

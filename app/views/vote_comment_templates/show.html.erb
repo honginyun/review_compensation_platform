@@ -38,7 +38,11 @@
       </dt>
       <!-- Display voter_id start -->
       <dd>
-        <%= @vote_comment.voter_id %>
+        <% if @vote_comment.voter.present? %>
+          <a href="/users/<%= @vote_comment.voter_id %>">
+            <%= @vote_comment.voter.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display voter_id end -->
 
@@ -47,7 +51,11 @@
       </dt>
       <!-- Display comment_id start -->
       <dd>
-        <%= @vote_comment.comment_id %>
+        <% if @vote_comment.comment.present? %>
+          <a href="/comments/<%= @vote_comment.comment_id %>">
+            <%= @vote_comment.comment.review_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display comment_id end -->
 

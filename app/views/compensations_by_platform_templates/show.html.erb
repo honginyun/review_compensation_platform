@@ -43,7 +43,11 @@
       </dt>
       <!-- Display review_id start -->
       <dd>
-        <%= @compensations_by_platform.review_id %>
+        <% if @compensations_by_platform.review.present? %>
+          <a href="/reviews/<%= @compensations_by_platform.review_id %>">
+            <%= @compensations_by_platform.review.compensation_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display review_id end -->
 

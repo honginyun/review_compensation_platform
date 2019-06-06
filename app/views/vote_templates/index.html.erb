@@ -66,13 +66,21 @@
 
         <!-- Display vote.user_id start -->
         <td>
-          <%= vote.user.created_at %>
+          <% if vote.user.present? %>
+            <a href="/users/<%= vote.user.id %>">
+              <%= vote.user.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display vote.user_id end -->
 
         <!-- Display vote.review_id start -->
         <td>
-          <%= vote.review.compensation_id %>
+          <% if vote.review.present? %>
+            <a href="/reviews/<%= vote.review.id %>">
+              <%= vote.review.compensation_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display vote.review_id end -->
 

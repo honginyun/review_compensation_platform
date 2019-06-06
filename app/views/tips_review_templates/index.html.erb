@@ -62,13 +62,21 @@
 
         <!-- Display tips_review.user_id start -->
         <td>
-          <%= tips_review.user.created_at %>
+          <% if tips_review.user.present? %>
+            <a href="/users/<%= tips_review.user.id %>">
+              <%= tips_review.user.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display tips_review.user_id end -->
 
         <!-- Display tips_review.review_id start -->
         <td>
-          <%= tips_review.review.compensation_id %>
+          <% if tips_review.review.present? %>
+            <a href="/reviews/<%= tips_review.review.id %>">
+              <%= tips_review.review.compensation_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display tips_review.review_id end -->
 

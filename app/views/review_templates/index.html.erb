@@ -82,7 +82,11 @@
 
         <!-- Display review.product_id start -->
         <td>
-          <%= review.product.category %>
+          <% if review.product.present? %>
+            <a href="/products/<%= review.product.id %>">
+              <%= review.product.category %>
+            </a>
+          <% end %>
         </td>
         <!-- Display review.product_id end -->
 
@@ -94,7 +98,11 @@
 
         <!-- Display review.reviewer_id start -->
         <td>
-          <%= review.reviewer.created_at %>
+          <% if review.reviewer.present? %>
+            <a href="/users/<%= review.reviewer.id %>">
+              <%= review.reviewer.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display review.reviewer_id end -->
 

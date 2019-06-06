@@ -66,13 +66,21 @@
 
         <!-- Display comment.review_id start -->
         <td>
-          <%= comment.review.compensation_id %>
+          <% if comment.review.present? %>
+            <a href="/reviews/<%= comment.review.id %>">
+              <%= comment.review.compensation_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comment.review_id end -->
 
         <!-- Display comment.commenter_id start -->
         <td>
-          <%= comment.commenter.created_at %>
+          <% if comment.commenter.present? %>
+            <a href="/users/<%= comment.commenter.id %>">
+              <%= comment.commenter.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comment.commenter_id end -->
 

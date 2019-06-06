@@ -72,7 +72,11 @@
 
         <!-- Display compensations_by_platform.review_id start -->
         <td>
-          <%= compensations_by_platform.review.compensation_id %>
+          <% if compensations_by_platform.review.present? %>
+            <a href="/reviews/<%= compensations_by_platform.review.id %>">
+              <%= compensations_by_platform.review.compensation_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display compensations_by_platform.review_id end -->
 

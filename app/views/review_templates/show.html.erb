@@ -56,7 +56,11 @@
       </dt>
       <!-- Display product_id start -->
       <dd>
-        <%= @review.product_id %>
+        <% if @review.product.present? %>
+          <a href="/products/<%= @review.product_id %>">
+            <%= @review.product.category %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display product_id end -->
 
@@ -74,7 +78,11 @@
       </dt>
       <!-- Display reviewer_id start -->
       <dd>
-        <%= @review.reviewer_id %>
+        <% if @review.reviewer.present? %>
+          <a href="/users/<%= @review.reviewer_id %>">
+            <%= @review.reviewer.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display reviewer_id end -->
 
