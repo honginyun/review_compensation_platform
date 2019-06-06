@@ -64,7 +64,7 @@
     </label>
 
     <!-- Input for reviewer_id start -->
-    <input type="text" id="reviewer_id" name="reviewer_id" class="form-control">
+    <%= select_tag(:reviewer_id, options_from_collection_for_select(User.all, :id, :created_at, @review.reviewer_id), :class => "form-control") %>
     <!-- Input for reviewer_id end -->
   </div>
   <!-- Label and input for reviewer_id end -->
