@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :vote_comments,
+             :foreign_key => "voter_id"
+
   has_many   :write_review,
              :class_name => "Review",
              :foreign_key => "reviewer_id"
