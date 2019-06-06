@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :comments,
+             :foreign_key => "commenter_id"
+
   has_many   :tips_reviews
 
   # Indirect associations
