@@ -1,6 +1,10 @@
 class Review < ApplicationRecord
   # Direct associations
 
+  belongs_to :product,
+             :required => false,
+             :counter_cache => true
+
   belongs_to :reviewer,
              :class_name => "User",
              :counter_cache => :write_review_count
