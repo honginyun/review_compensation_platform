@@ -28,7 +28,7 @@
     </label>
 
     <!-- Input for comment_id start -->
-    <input type="text" id="comment_id" name="comment_id" class="form-control">
+    <%= select_tag(:comment_id, options_from_collection_for_select(Comment.all, :id, :review_id, @vote_comment.comment_id), :class => "form-control") %>
     <!-- Input for comment_id end -->
   </div>
   <!-- Label and input for comment_id end -->
