@@ -40,7 +40,7 @@
     </label>
 
     <!-- Input for product_id start -->
-    <input type="text" id="product_id" name="product_id" class="form-control">
+    <%= select_tag(:product_id, options_from_collection_for_select(Product.all, :id, :category, @review.product_id), :class => "form-control") %>
     <!-- Input for product_id end -->
   </div>
   <!-- Label and input for product_id end -->
