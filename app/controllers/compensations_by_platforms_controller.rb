@@ -1,6 +1,7 @@
 class CompensationsByPlatformsController < ApplicationController
   def index
-    @compensations_by_platforms = CompensationsByPlatform.page(params[:page]).per(10)
+    @q = CompensationsByPlatform.ransack(params[:q])
+    @compensations_by_platforms = @q.result(:distinct => true).includes(:review).page(params[:page]).per(10)
 
     render("compensations_by_platform_templates/index.html.erb")
   end

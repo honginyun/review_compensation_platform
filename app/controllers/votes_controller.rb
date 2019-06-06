@@ -1,6 +1,7 @@
 class VotesController < ApplicationController
   def index
-    @votes = Vote.page(params[:page]).per(10)
+    @q = Vote.ransack(params[:q])
+    @votes = @q.result(:distinct => true).includes(:review, :user).page(params[:page]).per(10)
 
     render("vote_templates/index.html.erb")
   end

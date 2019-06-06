@@ -10,7 +10,8 @@ class VoteCommentsController < ApplicationController
   end
 
   def index
-    @vote_comments = VoteComment.page(params[:page]).per(10)
+    @q = VoteComment.ransack(params[:q])
+    @vote_comments = @q.result(:distinct => true).includes(:voter, :comment).page(params[:page]).per(10)
 
     render("vote_comment_templates/index.html.erb")
   end
