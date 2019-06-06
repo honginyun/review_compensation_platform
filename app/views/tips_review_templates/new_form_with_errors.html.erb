@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @tips_review.present? %>
   <% if @tips_review.errors.any? %>
     <% @tips_review.errors.full_messages.each do |message| %>
@@ -16,45 +15,31 @@
 
 <hr>
 
-<!-- Form tips_review start -->
 <form action="/create_tips_review" method="post">
-<!-- Form tips_review end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <label for="user_id">
       User
     </label>
 
-    <!-- Input for user_id start -->
     <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :created_at, @tips_review.user_id), :class => "form-control") %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for review_id start -->
   <div class="form-group">
     <label for="review_id">
       Review
     </label>
 
-    <!-- Input for review_id start -->
     <%= select_tag(:review_id, options_from_collection_for_select(Review.all, :id, :compensation_id, @tips_review.review_id), :class => "form-control") %>
-    <!-- Input for review_id end -->
   </div>
-  <!-- Label and input for review_id end -->
 
-  <!-- Label and input for amount start -->
   <div class="form-group">
     <label for="amount">
       Amount
     </label>
 
-    <!-- Input for amount start -->
     <input type="text" id="amount" name="amount" class="form-control" value="<%= @tips_review.amount %>">
-    <!-- Input for amount end -->
   </div>
-  <!-- Label and input for amount end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create tips review

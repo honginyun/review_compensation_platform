@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @review.errors.any? %>
   <% @review.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,60 +12,40 @@
 
 <hr>
 
-<!-- Form review start -->
 <form action="/update_review/<%= @review.id %>" method="post">
-<!-- Form review end -->
 
-  <!-- Label and input for compensation_id start -->
   <div class="form-group">
     <label for="compensation_id">
       Compensation
     </label>
 
-    <!-- Input for compensation_id start -->
     <input type="text" id="compensation_id" name="compensation_id" class="form-control" value="<%= @review.compensation_id %>">
-    <!-- Input for compensation_id end -->
   </div>
-  <!-- Label and input for compensation_id end -->
 
-  <!-- Label and input for review_content start -->
   <div class="form-group">
     <label for="review_content">
       Review content
     </label>
 
-    <!-- Input for review_content start -->
     <input type="text" id="review_content" name="review_content" class="form-control" value="<%= @review.review_content %>">
-    <!-- Input for review_content end -->
   </div>
-  <!-- Label and input for review_content end -->
 
-  <!-- Label and input for product_id start -->
   <div class="form-group">
     <label for="product_id">
       Product
     </label>
 
-    <!-- Input for product_id start -->
     <%= select_tag(:product_id, options_from_collection_for_select(Product.all, :id, :category, @review.product_id), :class => "form-control") %>
-    <!-- Input for product_id end -->
   </div>
-  <!-- Label and input for product_id end -->
 
-  <!-- Label and input for ratings start -->
   <div class="form-group">
     <label for="ratings">
       Ratings
     </label>
 
-    <!-- Input for ratings start -->
     <input type="text" id="ratings" name="ratings" class="form-control" value="<%= @review.ratings %>">
-    <!-- Input for ratings end -->
   </div>
-  <!-- Label and input for ratings end -->
 
-  <!-- Label and input for reviewer_id start -->
-  <!-- Label and input for reviewer_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update review

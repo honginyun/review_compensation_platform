@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link tips_review start -->
       <div class="col">
         <a href="/tips_reviews/<%= @tips_review.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit tips review
         </a>
       </div>
-      <!-- Edit link tips_review end -->
 
-      <!-- Delete link tips_review start -->
       <div class="col">
         <a href="/delete_tips_review/<%= @tips_review.id %>" class="btn btn-block btn-outline-secondary">
           Delete tips review
         </a>
       </div>
-      <!-- Delete link tips_review end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @tips_review.user.present? %>
           <a href="/users/<%= @tips_review.user_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Review
       </dt>
-      <!-- Display review_id start -->
       <dd>
         <% if @tips_review.review.present? %>
           <a href="/reviews/<%= @tips_review.review_id %>">
@@ -53,37 +46,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display review_id end -->
 
       <dt>
         Amount
       </dt>
-      <!-- Display amount start -->
       <dd>
         <%= @tips_review.amount %>
       </dd>
-      <!-- Display amount end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@tips_review.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@tips_review.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

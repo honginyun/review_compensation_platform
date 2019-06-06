@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "vote_comment_templates/vote_comments_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -54,13 +50,10 @@
 
       <% @vote_comments.each do |vote_comment| %>
       <tr>
-        <!-- Display vote_comment.id start -->
         <td>
           <%= vote_comment.id %>
         </td>
-        <!-- Display vote_comment.id end -->
 
-        <!-- Display vote_comment.voter_id start -->
         <td>
           <% if vote_comment.voter.present? %>
             <a href="/users/<%= vote_comment.voter.id %>">
@@ -68,9 +61,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display vote_comment.voter_id end -->
 
-        <!-- Display vote_comment.comment_id start -->
         <td>
           <% if vote_comment.comment.present? %>
             <a href="/comments/<%= vote_comment.comment.id %>">
@@ -78,19 +69,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display vote_comment.comment_id end -->
 
-        <!-- Display vote_comment.created_at start -->
         <td>
           <%= time_ago_in_words(vote_comment.created_at) %> ago
         </td>
-        <!-- Display vote_comment.created_at end -->
 
-        <!-- Display vote_comment.updated_at start -->
         <td>
           <%= time_ago_in_words(vote_comment.updated_at) %> ago
         </td>
-        <!-- Display vote_comment.updated_at end -->
 
         <td>
           <a href="/vote_comments/<%= vote_comment.id %>">

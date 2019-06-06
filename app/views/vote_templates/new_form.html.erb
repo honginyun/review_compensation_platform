@@ -5,57 +5,39 @@
 
 <hr>
 
-<!-- Form vote start -->
 <form action="/create_vote" method="post">
-<!-- Form vote end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <label for="user_id">
       User
     </label>
 
-    <!-- Input for user_id start -->
     <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :created_at, @vote.user_id), :class => "form-control") %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for review_id start -->
   <div class="form-group">
     <label for="review_id">
       Review
     </label>
 
-    <!-- Input for review_id start -->
     <%= select_tag(:review_id, options_from_collection_for_select(Review.all, :id, :compensation_id, @vote.review_id), :class => "form-control") %>
-    <!-- Input for review_id end -->
   </div>
-  <!-- Label and input for review_id end -->
 
-  <!-- Label and input for upvote start -->
   <div class="form-group">
     <label for="upvote">
       Upvote
     </label>
 
-    <!-- Input for upvote start -->
     <input type="text" id="upvote" name="upvote" class="form-control">
-    <!-- Input for upvote end -->
   </div>
-  <!-- Label and input for upvote end -->
 
-  <!-- Label and input for downvote start -->
   <div class="form-group">
     <label for="downvote">
       Downvote
     </label>
 
-    <!-- Input for downvote start -->
     <input type="text" id="downvote" name="downvote" class="form-control">
-    <!-- Input for downvote end -->
   </div>
-  <!-- Label and input for downvote end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create vote

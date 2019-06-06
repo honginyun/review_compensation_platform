@@ -1,17 +1,8 @@
-<!-- Form vote_comment start -->
 <form action="/create_vote_comment_from_comment" method="post">
-<!-- Form vote_comment end -->
 
-  <!-- Label and input for voter_id start -->
-  <!-- Input for "voter_id" start -->
   <input type="hidden" name="voter_id" value="<%= current_user.id %>">
-  <!-- Input for "voter_id" end -->
-  <!-- Label and input for voter_id end -->
 
-  <!-- Label and input for comment_id start -->
-  <!-- Input for comment_id start -->
   <input type="hidden" name="comment_id" value="<%= @comment.id %>">
-  <!-- Input for comment_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create vote comment

@@ -4,57 +4,39 @@
 
 <hr>
 
-<!-- Form comment start -->
 <form action="/update_comment/<%= @comment.id %>" method="post">
-<!-- Form comment end -->
 
-  <!-- Label and input for review_id start -->
   <div class="form-group">
     <label for="review_id">
       Review
     </label>
 
-    <!-- Input for review_id start -->
     <%= select_tag(:review_id, options_from_collection_for_select(Review.all, :id, :compensation_id, @comment.review_id), :class => "form-control") %>
-    <!-- Input for review_id end -->
   </div>
-  <!-- Label and input for review_id end -->
 
-  <!-- Label and input for commenter_id start -->
   <div class="form-group">
     <label for="commenter_id">
       Commenter
     </label>
 
-    <!-- Input for commenter_id start -->
     <%= select_tag(:commenter_id, options_from_collection_for_select(User.all, :id, :created_at, @comment.commenter_id), :class => "form-control") %>
-    <!-- Input for commenter_id end -->
   </div>
-  <!-- Label and input for commenter_id end -->
 
-  <!-- Label and input for comment start -->
   <div class="form-group">
     <label for="comment">
       Comment
     </label>
 
-    <!-- Input for comment start -->
     <textarea id="comment" name="comment" class="form-control" rows="3"><%= @comment.comment %></textarea>
-    <!-- Input for comment end -->
   </div>
-  <!-- Label and input for comment end -->
 
-  <!-- Label and input for comment_vote start -->
   <div class="form-group">
     <label for="comment_vote">
       Comment vote
     </label>
 
-    <!-- Input for comment_vote start -->
     <input type="text" id="comment_vote" name="comment_vote" class="form-control" value="<%= @comment.comment_vote %>">
-    <!-- Input for comment_vote end -->
   </div>
-  <!-- Label and input for comment_vote end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update comment

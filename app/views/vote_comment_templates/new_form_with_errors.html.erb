@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @vote_comment.present? %>
   <% if @vote_comment.errors.any? %>
     <% @vote_comment.errors.full_messages.each do |message| %>
@@ -16,27 +15,17 @@
 
 <hr>
 
-<!-- Form vote_comment start -->
 <form action="/create_vote_comment" method="post">
-<!-- Form vote_comment end -->
 
-  <!-- Label and input for voter_id start -->
-  <!-- Input for "voter_id" start -->
   <input type="hidden" name="voter_id" value="<%= current_user.id %>">
-  <!-- Input for "voter_id" end -->
-  <!-- Label and input for voter_id end -->
 
-  <!-- Label and input for comment_id start -->
   <div class="form-group">
     <label for="comment_id">
       Comment
     </label>
 
-    <!-- Input for comment_id start -->
     <%= select_tag(:comment_id, options_from_collection_for_select(Comment.all, :id, :review_id, @vote_comment.comment_id), :class => "form-control") %>
-    <!-- Input for comment_id end -->
   </div>
-  <!-- Label and input for comment_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create vote comment

@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link vote_comment start -->
       <div class="col">
         <% if current_user == @vote_comment.voter %>
           <a href="/vote_comments/<%= @vote_comment.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link vote_comment end -->
 
-      <!-- Delete link vote_comment start -->
       <div class="col">
         <% if current_user == @vote_comment.voter %>
           <a href="/delete_vote_comment/<%= @vote_comment.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link vote_comment end -->
     </div>
 
     <dl>
       <dt>
         Voter
       </dt>
-      <!-- Display voter_id start -->
       <dd>
         <% if @vote_comment.voter.present? %>
           <a href="/users/<%= @vote_comment.voter_id %>">
@@ -44,12 +39,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display voter_id end -->
 
       <dt>
         Comment
       </dt>
-      <!-- Display comment_id start -->
       <dd>
         <% if @vote_comment.comment.present? %>
           <a href="/comments/<%= @vote_comment.comment_id %>">
@@ -57,28 +50,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display comment_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@vote_comment.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@vote_comment.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

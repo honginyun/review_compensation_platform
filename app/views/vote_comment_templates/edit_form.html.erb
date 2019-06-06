@@ -4,24 +4,16 @@
 
 <hr>
 
-<!-- Form vote_comment start -->
 <form action="/update_vote_comment/<%= @vote_comment.id %>" method="post">
-<!-- Form vote_comment end -->
 
-  <!-- Label and input for voter_id start -->
-  <!-- Label and input for voter_id end -->
 
-  <!-- Label and input for comment_id start -->
   <div class="form-group">
     <label for="comment_id">
       Comment
     </label>
 
-    <!-- Input for comment_id start -->
     <%= select_tag(:comment_id, options_from_collection_for_select(Comment.all, :id, :review_id, @vote_comment.comment_id), :class => "form-control") %>
-    <!-- Input for comment_id end -->
   </div>
-  <!-- Label and input for comment_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update vote comment

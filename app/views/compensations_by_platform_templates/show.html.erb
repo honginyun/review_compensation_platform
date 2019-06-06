@@ -11,37 +11,30 @@
         </a>
       </div>
 
-      <!-- Edit link compensations_by_platform start -->
       <div class="col">
         <a href="/compensations_by_platforms/<%= @compensations_by_platform.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit compensations by platform
         </a>
       </div>
-      <!-- Edit link compensations_by_platform end -->
 
-      <!-- Delete link compensations_by_platform start -->
       <div class="col">
         <a href="/delete_compensations_by_platform/<%= @compensations_by_platform.id %>" class="btn btn-block btn-outline-secondary">
           Delete compensations by platform
         </a>
       </div>
-      <!-- Delete link compensations_by_platform end -->
     </div>
 
     <dl>
       <dt>
         Compensation amount
       </dt>
-      <!-- Display compensation_amount start -->
       <dd>
         <%= @compensations_by_platform.compensation_amount %>
       </dd>
-      <!-- Display compensation_amount end -->
 
       <dt>
         Review
       </dt>
-      <!-- Display review_id start -->
       <dd>
         <% if @compensations_by_platform.review.present? %>
           <a href="/reviews/<%= @compensations_by_platform.review_id %>">
@@ -49,46 +42,35 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display review_id end -->
 
       <dt>
         Compensated
       </dt>
-      <!-- Display compensated start -->
       <dd>
         <%= @compensations_by_platform.compensated %>
       </dd>
-      <!-- Display compensated end -->
 
       <dt>
         Notes
       </dt>
-      <!-- Display notes start -->
       <dd>
         <%= @compensations_by_platform.notes %>
       </dd>
-      <!-- Display notes end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@compensations_by_platform.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@compensations_by_platform.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

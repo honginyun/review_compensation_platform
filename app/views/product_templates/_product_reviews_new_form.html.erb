@@ -1,53 +1,32 @@
-<!-- Form review start -->
 <form action="/create_review_from_product" method="post">
-<!-- Form review end -->
 
-  <!-- Label and input for compensation_id start -->
   <div class="form-group">
     <label for="compensation_id">
       Compensation
     </label>
 
-    <!-- Input for compensation_id start -->
     <input type="text" id="compensation_id" name="compensation_id" class="form-control" value="<%= @review.compensation_id %>">
-    <!-- Input for compensation_id end -->
   </div>
-  <!-- Label and input for compensation_id end -->
 
-  <!-- Label and input for review_content start -->
   <div class="form-group">
     <label for="review_content">
       Review content
     </label>
 
-    <!-- Input for review_content start -->
     <input type="text" id="review_content" name="review_content" class="form-control" value="<%= @review.review_content %>">
-    <!-- Input for review_content end -->
   </div>
-  <!-- Label and input for review_content end -->
 
-  <!-- Label and input for product_id start -->
-  <!-- Input for product_id start -->
   <input type="hidden" name="product_id" value="<%= @product.id %>">
-  <!-- Input for product_id end -->
 
-  <!-- Label and input for ratings start -->
   <div class="form-group">
     <label for="ratings">
       Ratings
     </label>
 
-    <!-- Input for ratings start -->
     <input type="text" id="ratings" name="ratings" class="form-control" value="<%= @review.ratings %>">
-    <!-- Input for ratings end -->
   </div>
-  <!-- Label and input for ratings end -->
 
-  <!-- Label and input for reviewer_id start -->
-  <!-- Input for "reviewer_id" start -->
   <input type="hidden" name="reviewer_id" value="<%= current_user.id %>">
-  <!-- Input for "reviewer_id" end -->
-  <!-- Label and input for reviewer_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create review

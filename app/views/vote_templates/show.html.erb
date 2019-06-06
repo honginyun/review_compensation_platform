@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link vote start -->
       <div class="col">
         <a href="/votes/<%= @vote.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit vote
         </a>
       </div>
-      <!-- Edit link vote end -->
 
-      <!-- Delete link vote start -->
       <div class="col">
         <a href="/delete_vote/<%= @vote.id %>" class="btn btn-block btn-outline-secondary">
           Delete vote
         </a>
       </div>
-      <!-- Delete link vote end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @vote.user.present? %>
           <a href="/users/<%= @vote.user_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Review
       </dt>
-      <!-- Display review_id start -->
       <dd>
         <% if @vote.review.present? %>
           <a href="/reviews/<%= @vote.review_id %>">
@@ -53,46 +46,35 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display review_id end -->
 
       <dt>
         Upvote
       </dt>
-      <!-- Display upvote start -->
       <dd>
         <%= @vote.upvote %>
       </dd>
-      <!-- Display upvote end -->
 
       <dt>
         Downvote
       </dt>
-      <!-- Display downvote start -->
       <dd>
         <%= @vote.downvote %>
       </dd>
-      <!-- Display downvote end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@vote.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@vote.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

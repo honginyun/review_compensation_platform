@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @comment.vote_comments.each do |vote_comment| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/vote_comments/<%= vote_comment.id %>">
           <%= vote_comment.voter_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == vote_comment.voter %>
           <a href="/delete_vote_comment_from_comment/<%= vote_comment.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="comment_vote_comments_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "comment_templates/comment_vote_comments_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 
