@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Tips review resource:
+
+  # CREATE
+  get("/tips_reviews/new", { :controller => "tips_reviews", :action => "new_form" })
+  post("/create_tips_review", { :controller => "tips_reviews", :action => "create_row" })
+
+  # READ
+  get("/tips_reviews", { :controller => "tips_reviews", :action => "index" })
+  get("/tips_reviews/:id_to_display", { :controller => "tips_reviews", :action => "show" })
+
+  # UPDATE
+  get("/tips_reviews/:prefill_with_id/edit", { :controller => "tips_reviews", :action => "edit_form" })
+  post("/update_tips_review/:id_to_modify", { :controller => "tips_reviews", :action => "update_row" })
+
+  # DELETE
+  get("/delete_tips_review/:id_to_remove", { :controller => "tips_reviews", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Compensations by platform resource:
 
   # CREATE
