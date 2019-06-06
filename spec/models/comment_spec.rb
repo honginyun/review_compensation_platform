@@ -4,6 +4,8 @@ RSpec.describe Comment, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:vote_comments) }
+
     it { should belong_to(:commenter) }
 
     it { should belong_to(:review) }

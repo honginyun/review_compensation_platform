@@ -1,6 +1,9 @@
 class Comment < ApplicationRecord
   # Direct associations
 
+  has_many   :vote_comments,
+             :dependent => :destroy
+
   belongs_to :commenter,
              :class_name => "User"
 
