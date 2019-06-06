@@ -21,15 +21,9 @@
 <!-- Form vote_comment end -->
 
   <!-- Label and input for voter_id start -->
-  <div class="form-group">
-    <label for="voter_id">
-      Voter
-    </label>
-
-    <!-- Input for voter_id start -->
-    <%= select_tag(:voter_id, options_from_collection_for_select(User.all, :id, :created_at, @vote_comment.voter_id), :class => "form-control") %>
-    <!-- Input for voter_id end -->
-  </div>
+  <!-- Input for "voter_id" start -->
+  <input type="hidden" name="voter_id" value="<%= current_user.id %>">
+  <!-- Input for "voter_id" end -->
   <!-- Label and input for voter_id end -->
 
   <!-- Label and input for comment_id start -->

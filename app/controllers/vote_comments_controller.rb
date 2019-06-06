@@ -56,7 +56,7 @@ class VoteCommentsController < ApplicationController
   def update_row
     @vote_comment = VoteComment.find(params.fetch("id_to_modify"))
 
-    @vote_comment.voter_id = params.fetch("voter_id")
+    
     @vote_comment.comment_id = params.fetch("comment_id")
 
     if @vote_comment.valid?
