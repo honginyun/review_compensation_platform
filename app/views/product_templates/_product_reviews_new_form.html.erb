@@ -44,15 +44,9 @@
   <!-- Label and input for ratings end -->
 
   <!-- Label and input for reviewer_id start -->
-  <div class="form-group">
-    <label for="reviewer_id">
-      Reviewer
-    </label>
-
-    <!-- Input for reviewer_id start -->
-    <%= select_tag(:reviewer_id, options_from_collection_for_select(User.all, :id, :created_at, @review.reviewer_id), :class => "form-control") %>
-    <!-- Input for reviewer_id end -->
-  </div>
+  <!-- Input for "reviewer_id" start -->
+  <input type="hidden" name="reviewer_id" value="<%= current_user.id %>">
+  <!-- Input for "reviewer_id" end -->
   <!-- Label and input for reviewer_id end -->
 
   <button class="btn btn-block btn-outline-secondary">

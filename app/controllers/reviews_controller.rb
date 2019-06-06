@@ -69,7 +69,7 @@ class ReviewsController < ApplicationController
     @review.review_content = params.fetch("review_content")
     @review.product_id = params.fetch("product_id")
     @review.ratings = params.fetch("ratings")
-    @review.reviewer_id = params.fetch("reviewer_id")
+    
 
     if @review.valid?
       @review.save
