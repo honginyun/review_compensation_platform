@@ -1,0 +1,79 @@
+<!-- Validation failure messages -->
+<% if @compensations_by_platform.present? %>
+  <% if @compensations_by_platform.errors.any? %>
+    <% @compensations_by_platform.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new compensations by platform
+</h1>
+
+
+<hr>
+
+<!-- Form compensations_by_platform start -->
+<form action="/create_compensations_by_platform" method="post">
+<!-- Form compensations_by_platform end -->
+
+  <!-- Label and input for compensation_amount start -->
+  <div class="form-group">
+    <label for="compensation_amount">
+      Compensation amount
+    </label>
+
+    <!-- Input for compensation_amount start -->
+    <input type="text" id="compensation_amount" name="compensation_amount" class="form-control" value="<%= @compensations_by_platform.compensation_amount %>">
+    <!-- Input for compensation_amount end -->
+  </div>
+  <!-- Label and input for compensation_amount end -->
+
+  <!-- Label and input for review_id start -->
+  <div class="form-group">
+    <label for="review_id">
+      Review
+    </label>
+
+    <!-- Input for review_id start -->
+    <input type="text" id="review_id" name="review_id" class="form-control" value="<%= @compensations_by_platform.review_id %>">
+    <!-- Input for review_id end -->
+  </div>
+  <!-- Label and input for review_id end -->
+
+  <!-- Label and input for compensated start -->
+  <div class="form-check">
+    <input type="hidden" value="0" name="compensated">
+    <!-- Input for compensated start -->
+    <input id="compensated" class="form-check-input" name="compensated" type="checkbox" <%= "checked" if @compensations_by_platform.compensated %>>
+    <!-- Input for compensated end -->
+    <label for="compensated" class="form-check-label">
+      Compensated
+    </label>
+  </div>
+
+  <!-- Label and input for notes start -->
+  <div class="form-group">
+    <label for="notes">
+      Notes
+    </label>
+
+    <!-- Input for notes start -->
+    <textarea id="notes" name="notes" class="form-control" rows="3"><%= @compensations_by_platform.notes %></textarea>
+    <!-- Input for notes end -->
+  </div>
+  <!-- Label and input for notes end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create compensations by platform
+  </button>
+</form>
+
+<hr>
+
+<a href="/compensations_by_platforms">
+  Go back
+</a>

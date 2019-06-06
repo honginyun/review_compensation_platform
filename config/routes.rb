@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Compensations by platform resource:
+
+  # CREATE
+  get("/compensations_by_platforms/new", { :controller => "compensations_by_platforms", :action => "new_form" })
+  post("/create_compensations_by_platform", { :controller => "compensations_by_platforms", :action => "create_row" })
+
+  # READ
+  get("/compensations_by_platforms", { :controller => "compensations_by_platforms", :action => "index" })
+  get("/compensations_by_platforms/:id_to_display", { :controller => "compensations_by_platforms", :action => "show" })
+
+  # UPDATE
+  get("/compensations_by_platforms/:prefill_with_id/edit", { :controller => "compensations_by_platforms", :action => "edit_form" })
+  post("/update_compensations_by_platform/:id_to_modify", { :controller => "compensations_by_platforms", :action => "update_row" })
+
+  # DELETE
+  get("/delete_compensations_by_platform/:id_to_remove", { :controller => "compensations_by_platforms", :action => "destroy_row" })
+
+  #------------------------------
+
   devise_for :users
   # Routes for the User resource:
 
