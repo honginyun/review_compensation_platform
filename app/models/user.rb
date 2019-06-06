@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :likes,
+             :class_name => "Vote",
+             :dependent => :destroy
+
   has_many   :comments,
              :foreign_key => "commenter_id"
 
