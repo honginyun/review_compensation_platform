@@ -10,7 +10,7 @@ class VoteCommentsController < ApplicationController
   end
 
   def index
-    @vote_comments = VoteComment.all
+    @vote_comments = VoteComment.page(params[:page]).per(10)
 
     render("vote_comment_templates/index.html.erb")
   end

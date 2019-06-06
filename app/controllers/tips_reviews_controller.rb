@@ -1,6 +1,6 @@
 class TipsReviewsController < ApplicationController
   def index
-    @tips_reviews = TipsReview.all
+    @tips_reviews = TipsReview.page(params[:page]).per(10)
 
     render("tips_review_templates/index.html.erb")
   end
